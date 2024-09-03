@@ -12,7 +12,7 @@ module.exports = {
             color: "#fff",
           },
           ".btn-outline.btn-primary:hover": {
-            color: "#fff",
+            color: "#fff ",
           },
         },
       },
