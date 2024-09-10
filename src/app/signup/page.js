@@ -5,7 +5,15 @@ import React from "react";
 import { IoLogoFacebook, IoLogoGoogle, IoLogoLinkedin } from "react-icons/io5";
 
 const page = () => {
-  const handleLogin = async () => {};
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    const newUser = {
+      name: event.target.name.value,
+      email: event.target.email.value,
+      password: event.target.password.value,
+    };
+    console.log(newUser);
+  };
 
   return (
     <div className=" container mx-auto py-24">
@@ -20,9 +28,16 @@ const page = () => {
         </div>
         <div className="border-2 rounded-xl p-12">
           <h2 className="text-2xl font-semibold text-primary text-center mb-12">
-            Sign In
+            Sign Up
           </h2>
           <form onSubmit={handleLogin} action="">
+            <label htmlFor="email">Name</label> <br />
+            <input
+              type="text"
+              name="name"
+              placeholder="your name "
+              className=" my-4 input input-bordered w-full "
+            />
             <label htmlFor="email">Email</label> <br />
             <input
               type="email"
@@ -59,10 +74,10 @@ const page = () => {
                 Not have an account?{" "}
                 <Link
                   className="text-primary my-2 font-semibold "
-                  href={"/signup"}
+                  href={"/login"}
                 >
                   {" "}
-                  Sign Up{" "}
+                  Sign In{" "}
                 </Link>{" "}
               </h6>
             </div>
